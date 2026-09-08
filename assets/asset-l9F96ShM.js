@@ -1,0 +1,1 @@
+function e(e){return`/Grok-Website/${e.replace(/^\/+/,``)}`}export{e as t};
