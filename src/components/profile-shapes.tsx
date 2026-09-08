@@ -1,0 +1,36 @@
+import { cn } from "@/lib/utils";
+
+type Shape = "tslot" | "box" | "channel" | "heatsink" | "angle" | "custom";
+
+const paths: Record<Shape, string> = {
+  tslot:
+    "M8 8h8v4H14v2h4V12h2v8h-2v-2H14v4h2v4H8v-4h2v-4H6v2H4v-8h2V12h4V10H8V8zm4 10h2v2h-2v-2z",
+  box: "M5 7h14v14H5V7zm3 3v8h8v-8H8z",
+  channel: "M6 6h12v4h-3v8h3v4H6v-4h3V10H6V6z",
+  heatsink:
+    "M4 18h16v3H4v-3zm1-2h2V6H5v10zm3 0h2V8H8v8zm3 0h2V5h-2v11zm3 0h2V8h-2v8zm3 0h2V6h-2v10z",
+  angle: "M6 6h5v9h9v5H6V6z",
+  custom:
+    "M4 10h5l2-4h4l2 4h3v4h-3l-1 6H8l-1-6H4v-4zm7 2.5a1.5 1.5 0 1 0 2 0 1.5 1.5 0 0 0-2 0z",
+};
+
+export function ProfileShape({
+  shape,
+  className,
+}: {
+  shape: Shape;
+  className?: string;
+}) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className={cn("size-12 text-primary", className)}
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d={paths[shape]} />
+    </svg>
+  );
+}
+
+export const familyShapes: Shape[] = ["tslot", "box", "heatsink", "custom"];
