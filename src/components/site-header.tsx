@@ -18,7 +18,7 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-bg/92 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-border bg-bg/92 backdrop-blur-md">
       <div className="mx-auto flex h-11 max-w-6xl items-center px-4 text-[11px] uppercase tracking-[0.16em] text-muted sm:px-6">
         <span>{t.topbar}</span>
       </div>

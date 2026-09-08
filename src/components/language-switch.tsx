@@ -75,7 +75,7 @@ export function LanguageSwitch({ className }: { className?: string }) {
         <ul
           role="listbox"
           aria-label="Language"
-          className="absolute right-0 z-50 mt-1 min-w-[12.5rem] overflow-hidden rounded-md border border-border bg-elevated py-1 shadow-lg"
+          className="absolute right-0 z-[60] mt-1 min-w-[12.5rem] overflow-hidden rounded-md border border-border bg-surface py-1 shadow-[0_12px_40px_rgba(0,0,0,0.45)]"
         >
           {options.map((opt) => {
             const selected = lang === opt.code;
