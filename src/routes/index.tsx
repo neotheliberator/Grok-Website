@@ -1,4 +1,3 @@
-import { asset } from "@/lib/asset";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { familyShapes, ProfileShape } from "@/components/profile-shapes";
 import { SiteShell } from "@/components/site-shell";
@@ -14,7 +13,7 @@ function Home() {
     <SiteShell>
       <section className="relative isolate min-h-[88dvh] overflow-hidden">
         <img
-          src={asset("images/press.jpg")}
+          src="/images/press.jpg"
           alt=""
           className="absolute inset-0 size-full object-cover object-center"
         />
@@ -70,13 +69,6 @@ function Home() {
             </article>
           ))}
         </div>
-        <div className="mt-10 overflow-hidden rounded-xl border border-border">
-          <img
-            src={asset("images/profiles.jpg")}
-            alt=""
-            className="h-64 w-full object-cover sm:h-80"
-          />
-        </div>
       </section>
 
       <section className="bg-surface">
@@ -112,7 +104,7 @@ function Home() {
 
       <section className="relative isolate overflow-hidden">
         <img
-          src={asset("images/warehouse.jpg")}
+          src="/images/warehouse.jpg"
           alt=""
           className="absolute inset-0 size-full object-cover"
         />

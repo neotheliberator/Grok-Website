@@ -22,7 +22,7 @@ export function SiteHeader() {
       <div className="mx-auto flex h-11 max-w-6xl items-center px-4 text-[11px] uppercase tracking-[0.16em] text-muted sm:px-6">
         <span>{t.topbar}</span>
       </div>
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
+      <div className="mx-auto flex h-[4.75rem] max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link to="/" className="flex min-w-0 items-baseline gap-3" onClick={() => setOpen(false)}>
           <span className="font-display text-2xl font-semibold tracking-[0.08em] text-fg">
             {t.brand}
@@ -31,13 +31,13 @@ export function SiteHeader() {
             {t.brandSub}
           </span>
         </Link>
-        <nav className="hidden items-center gap-6 lg:flex">
+        <nav className="hidden items-center gap-9 lg:flex">
           {links.map((link) => (
             <Link
               key={link.to}
               to={link.to}
               className={cn(
-                "text-sm text-muted transition-colors duration-150 hover:text-fg",
+                "text-lg font-medium text-muted transition-colors duration-150 hover:text-fg",
                 pathname === link.to && "text-fg",
               )}
             >
@@ -69,7 +69,7 @@ export function SiteHeader() {
                 key={link.to}
                 to={link.to}
                 onClick={() => setOpen(false)}
-                className="flex min-h-11 items-center text-base text-fg"
+                className="flex min-h-11 items-center text-lg font-medium text-fg"
               >
                 {t.nav[link.key]}
               </Link>

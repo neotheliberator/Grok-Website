@@ -1,5 +1,5 @@
-import { asset } from "@/lib/asset";
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { familyShapes, ProfileShape } from "@/components/profile-shapes";
 import { SiteShell } from "@/components/site-shell";
 import { Button } from "@/components/ui/button";
 import { useCopy } from "@/lib/copy";
@@ -17,11 +17,18 @@ function Produkte() {
         <h1 className="mt-3 font-display text-5xl font-semibold text-fg sm:text-6xl">{p.title}</h1>
         <p className="mt-5 max-w-2xl text-lg text-muted">{p.lead}</p>
 
-        <img
-          src={asset("images/profiles.jpg")}
-          alt=""
-          className="mt-12 h-72 w-full rounded-xl object-cover sm:h-96"
-        />
+        <div className="mt-12 grid gap-4 sm:grid-cols-2">
+          {t.families.map((family, i) => (
+            <article
+              key={family.title}
+              className="rounded-xl border border-border bg-surface p-6 sm:p-7"
+            >
+              <ProfileShape shape={familyShapes[i] ?? "custom"} />
+              <h3 className="mt-5 font-display text-2xl font-semibold text-fg">{family.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted">{family.body}</p>
+            </article>
+          ))}
+        </div>
 
         <h2 className="mt-16 font-display text-3xl font-semibold text-fg">{p.alloysTitle}</h2>
         <div className="mt-6 overflow-x-auto rounded-xl border border-border">
