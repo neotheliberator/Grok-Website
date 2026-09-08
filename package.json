@@ -6,7 +6,7 @@
     "predev": "node scripts/decode-assets.mjs",
     "dev": "vite",
     "prebuild": "node scripts/decode-assets.mjs",
-    "build": "vite build",
+    "build": "vite build && node scripts/spa-fallback.mjs",
     "typecheck": "tsc --noEmit",
     "preview": "vite preview"
   },
